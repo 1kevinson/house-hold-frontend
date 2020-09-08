@@ -14,6 +14,8 @@ import { RequestsComponent } from './main/main-view/requests/requests.component'
 import { AppointmentsComponent } from './main/main-view/appointments/appointments.component';
 import { HouseComponent } from './main/main-view/house/house.component';
 import { DocumentsComponent } from './main/main-view/documents/documents.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,10 @@ import { DocumentsComponent } from './main/main-view/documents/documents.compone
     AppointmentsComponent,
     HouseComponent,
     DocumentsComponent,
+    AuthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

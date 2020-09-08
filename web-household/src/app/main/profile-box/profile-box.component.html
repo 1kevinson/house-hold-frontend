@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-center my-3">
   <div class="card" style="width: 28rem;">
     <div class="card-body">
-      <h5 class="card-title">Jean Marc Dupont</h5>
+      <h5 class="card-title">{{ user.fullname }}</h5>
       <p class="card-text">
-        jm.dupont25@outlook.fr
+        {{ user.email }}
       </p>
-      <span class="badge badge-success">En règle dans les paiements</span>
+      <span class="badge badge-success">{{ user.status }}</span>
       <br /><br />
       <a href="#" class="btn btn-light">Déconnexion</a>
     </div>
