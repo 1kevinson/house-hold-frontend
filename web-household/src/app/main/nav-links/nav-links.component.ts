@@ -9,7 +9,7 @@ export class NavLinksComponent implements OnInit {
   navLinks: string[] = [
     'Accueil',
     'Factures',
-    'Requêtes',
+    'Requetes',
     'Rendez-vous',
     'Maison',
     'Documents',

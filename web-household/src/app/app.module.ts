@@ -9,6 +9,11 @@ import { NavLinksComponent } from './main/nav-links/nav-links.component';
 import { MainViewComponent } from './main/main-view/main-view.component';
 import { HomeComponent } from './main/main-view/home/home.component';
 import { BillsComponent } from './main/main-view/bills/bills.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RequestsComponent } from './main/main-view/requests/requests.component';
+import { AppointmentsComponent } from './main/main-view/appointments/appointments.component';
+import { HouseComponent } from './main/main-view/house/house.component';
+import { DocumentsComponent } from './main/main-view/documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +25,12 @@ import { BillsComponent } from './main/main-view/bills/bills.component';
     MainViewComponent,
     HomeComponent,
     BillsComponent,
+    RequestsComponent,
+    AppointmentsComponent,
+    HouseComponent,
+    DocumentsComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

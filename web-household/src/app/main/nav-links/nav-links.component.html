@@ -1,7 +1,13 @@
 <div class="offset-1 col-10 container-fluid my-4">
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation" *ngFor="let linkEl of navLinks">
-      <a class="nav-link" data-toggle="tab" role="tab">{{ linkEl }}</a>
+      <a
+        class="nav-link"
+        data-toggle="tab"
+        routerLink="/{{ linkEl | lowercase }}"
+        role="tab"
+        >{{ linkEl }}</a
+      >
     </li>
   </ul>
 </div>
