@@ -1,22 +1,7 @@
 <div class="offset-1 col-10 container-fluid my-4">
   <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" data-toggle="tab" role="tab">Accueil</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" data-toggle="tab" role="tab">Factures</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" data-toggle="tab" role="tab">Requetes</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" data-toggle="tab" role="tab">Rendez-Vous</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" data-toggle="tab" role="tab">Maison</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" data-toggle="tab" role="tab">Documents</a>
+    <li class="nav-item" role="presentation" *ngFor="let linkEl of navLinks">
+      <a class="nav-link" data-toggle="tab" role="tab">{{ linkEl }}</a>
     </li>
   </ul>
 </div>

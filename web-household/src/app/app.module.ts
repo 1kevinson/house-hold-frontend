@@ -19,12 +19,10 @@ import { BillsComponent } from './main/main-view/bills/bills.component';
     NavLinksComponent,
     MainViewComponent,
     HomeComponent,
-    BillsComponent
+    BillsComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
