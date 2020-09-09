@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="row">
+  <div
+    class="card border-dark mb-3 home-card"
+    style="width: 18rem;"
+    *ngFor="let link of arrayOfLinksNumbers; let i = index"
+  >
+    <div class="card-body text-dark">
+      <h5 class="card-title">{{ link[0] | titlecase }}</h5>
+      <p
+        *ngIf="link[0] !== 'maison'; else elseBlock"
+        class="card-text text-right"
+      >
+        Total de {{ link[0] }} : {{ link[1] }}
+      </p>
+      <ng-template #elseBlock>
+        <p class="card-text text-right">
+          Nombre de locataire : {{ link[1] }}
+        </p></ng-template
+      >
+    </div>
+  </div>
+</div>

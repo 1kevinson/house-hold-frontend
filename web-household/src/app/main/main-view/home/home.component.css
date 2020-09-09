@@ -1,0 +1,13 @@
+.home-card {
+  margin-top: 2rem;
+}
+
+.home-card:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.home-card:hover {
+  background-color: rgba(183, 224, 239, 0.18);
+  border-left: solid 3px #2d74cb !important;
+  cursor: pointer;
+}
