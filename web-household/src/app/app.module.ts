@@ -16,6 +16,7 @@ import { HouseComponent } from './main/main-view/house/house.component';
 import { DocumentsComponent } from './main/main-view/documents/documents.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
+import { NavService } from './main/nav-links/nav.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AuthService } from './auth/auth.service';
     AuthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [AuthService],
+  providers: [AuthService, NavService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

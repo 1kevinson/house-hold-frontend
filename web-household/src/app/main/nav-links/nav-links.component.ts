@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService } from './nav.service';
 
 @Component({
   selector: 'app-nav-links',
@@ -6,16 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-links.component.css'],
 })
 export class NavLinksComponent implements OnInit {
-  navLinks: string[] = [
-    'Accueil',
-    'Factures',
-    'Requetes',
-    'Rendez-vous',
-    'Maison',
-    'Documents',
-  ];
+  navLinks: string[];
 
-  constructor() {}
+  constructor(private navService: NavService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.navLinks = this.navService.getNavLinks();
+  }
 }
