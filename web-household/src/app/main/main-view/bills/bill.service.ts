@@ -7,7 +7,7 @@ export class BillService {
   generateBills(): Bill[] {
     const newBills = [];
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 12; i++) {
       const amount: number = faker.commerce.price();
       if (i > 4 && i < 8) {
         const newBill = new Bill(
