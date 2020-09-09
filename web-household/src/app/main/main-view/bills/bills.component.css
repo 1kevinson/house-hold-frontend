@@ -1,0 +1,16 @@
+.hover-cursor th {
+  font-weight: normal;
+}
+
+.download-bill:hover {
+  background-color: rgba(179, 180, 179, 0.64);
+  cursor: pointer;
+}
+
+.complete {
+  background-color: rgba(183, 229, 183, 0.77);
+}
+
+.incomplete {
+  background-color: rgba(243, 163, 163, 0.73);
+}

@@ -1,1 +1,82 @@
-<p>bills works!</p>
+<div class="row">
+  <!--Header of bills page-->
+  <div class="col-12">
+    <div class="row">
+      <div class="col-6">
+        <form class="form-inline my-2 my-lg-0">
+          <label>
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="année de facturation"
+            />
+          </label>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Rechercher
+          </button>
+        </form>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        Total de factures : &nbsp; <kbd> {{ billsCount }}</kbd>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bills Table-->
+  <div class="col-12 mt-5 mb-3" id="bill-table">
+    <table class="table table-hover table-bordered table-responsive-sm">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">N°</th>
+          <th scope="col">Mois</th>
+          <th scope="col">Année</th>
+          <th scope="col">Montant due</th>
+          <th scope="col">Montant payé</th>
+          <th scope="col">Status</th>
+          <th scope="col">Date de facturation</th>
+          <th scope="col">Telecharger</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover-cursor" *ngFor="let bill of bills">
+          <th>{{ bill.billNumber }}</th>
+          <th>{{ bill.month }}</th>
+          <th>{{ bill.year }}</th>
+          <th>{{ bill.amountDue }}</th>
+          <th>{{ bill.amountPaid }}</th>
+          <th
+            [ngClass]="{
+              complete: bill.status === 'COMPLETE',
+              incomplete: bill.status === 'INCOMPLETE'
+            }"
+          >
+            {{ bill.status }}
+          </th>
+          <th>{{ bill.billDate }}</th>
+          <td class="d-flex justify-content-center download-bill">&#x2b07;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Bills Pagination-->
+  <div class="col-12 d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

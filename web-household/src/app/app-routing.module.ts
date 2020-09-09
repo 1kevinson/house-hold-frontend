@@ -13,6 +13,7 @@ import { DocumentsComponent } from './main/main-view/documents/documents.compone
  */
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: HomeComponent },
   { path: 'factures', component: BillsComponent },
   { path: 'requetes', component: RequestsComponent },

@@ -17,6 +17,7 @@ import { DocumentsComponent } from './main/main-view/documents/documents.compone
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { NavService } from './main/nav-links/nav.service';
+import { BillService } from './main/main-view/bills/bill.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { NavService } from './main/nav-links/nav.service';
     AuthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [AuthService, NavService],
+  providers: [AuthService, NavService, BillService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
