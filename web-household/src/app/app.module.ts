@@ -18,6 +18,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { NavService } from './main/nav-links/nav.service';
 import { BillService } from './main/main-view/bills/bill.service';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { BillService } from './main/main-view/bills/bill.service';
     DocumentsComponent,
     AuthComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [AuthService, NavService, BillService],
   bootstrap: [AppComponent],
 })

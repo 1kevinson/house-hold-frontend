@@ -3,12 +3,14 @@
   <div class="col-12">
     <div class="row">
       <div class="col-6">
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmit()" #s="ngForm">
           <label>
             <input
               class="form-control mr-sm-2"
               type="search"
               placeholder="année de facturation"
+              ngModel
+              name="search"
             />
           </label>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
@@ -17,14 +19,14 @@
         </form>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        Total de factures : &nbsp; <kbd> {{ billsCount }}</kbd>
+        Total de factures : &nbsp;<span><kbd> {{ billsCount }}</kbd></span>
       </div>
     </div>
   </div>
 
   <!-- Bills Table-->
   <div class="col-12 mt-5 mb-3" id="bill-table">
-    <table class="table table-hover table-bordered table-responsive-sm">
+    <table class="table table-hover table-bordered table-responsive">
       <thead class="thead-light">
         <tr>
           <th scope="col">N°</th>

@@ -13,7 +13,7 @@ export class BillService {
         const newBill = new Bill(
           i,
           faker.date.month(),
-          2018,
+          2016,
           amount,
           amount - 10.0,
           'INCOMPLETE',
@@ -38,6 +38,11 @@ export class BillService {
 
   getBills() {
     return this.generateBills();
+  }
+
+  getBillByYear(year: number) {
+    const newBills = this.getBills();
+    return newBills.filter((bill) => bill.year === year);
   }
 
   getCountBills() {
