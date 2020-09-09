@@ -11,3 +11,7 @@
   border-left: solid 3px #2d74cb !important;
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}

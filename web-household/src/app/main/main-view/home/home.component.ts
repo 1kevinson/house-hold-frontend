@@ -15,7 +15,5 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.homeLinkNumbers = this.navService.getHomeLinksNumbers();
     this.arrayOfLinksNumbers = Object.entries(this.homeLinkNumbers);
-
-    console.log(this.arrayOfLinksNumbers);
   }
 }
