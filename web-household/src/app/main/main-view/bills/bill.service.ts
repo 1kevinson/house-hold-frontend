@@ -1,5 +1,5 @@
 import { Bill } from './bill.model';
-import * as faker from 'faker/locale/fr';
+import * as faker from 'faker';
 
 export class BillService {
   private bills: Array<Bill> = [];
