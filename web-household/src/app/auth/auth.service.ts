@@ -7,7 +7,6 @@ export class AuthService {
       'Dupont',
       'jd.montreal124@outlook.fr',
       'bizar15248963ko',
-      'En règle dans les paiements',
       'TENANT'
     ),
     new User(
@@ -15,7 +14,6 @@ export class AuthService {
       'bern',
       'jd.bernArndhuh@gmail.com',
       'bizar1sds4d7sdko',
-      'En retard dans les paiements',
       'OWNER'
     ),
     new User(
@@ -23,7 +21,6 @@ export class AuthService {
       'Twain',
       'marky.twainy@gmail.com',
       'bizar1sds4d7sdko',
-      'En retard dans les paiements',
       'OWNER'
     ),
   ];
