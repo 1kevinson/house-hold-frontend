@@ -11,7 +11,7 @@ import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
  */
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth/home', pathMatch: 'full' },
   {
     path: 'auth',
     component: AuthComponent,

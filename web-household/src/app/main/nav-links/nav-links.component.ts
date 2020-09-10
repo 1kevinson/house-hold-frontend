@@ -7,11 +7,7 @@ import { NavService } from './nav.service';
   styleUrls: ['./nav-links.component.css'],
 })
 export class NavLinksComponent implements OnInit {
-  navLinks: string[];
+  constructor() {}
 
-  constructor(private navService: NavService) {}
-
-  ngOnInit(): void {
-    this.navLinks = this.navService.getNavLinks();
-  }
+  ngOnInit(): void {}
 }
