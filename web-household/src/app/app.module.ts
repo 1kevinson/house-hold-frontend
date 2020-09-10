@@ -20,6 +20,7 @@ import { NavService } from './main/nav-links/nav.service';
 import { BillService } from './main/main-view/bills/bill.service';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth/auth-guard.service';
+import { MainRoutingModule } from './main/main-routing.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { AuthGuard } from './auth/auth-guard.service';
     DocumentsComponent,
     AuthComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, MainRoutingModule, FormsModule],
   providers: [AuthService, NavService, BillService, AuthGuard],
   bootstrap: [AppComponent],
 })

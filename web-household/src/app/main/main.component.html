@@ -10,7 +10,10 @@
     </div>
     <div class="col-12">
       <!--  main view -->
-      <app-main-view></app-main-view>
+      <app-main-view>
+        <!-- Router outlet is possible here beacause of children of in the appRoutes configuration-->
+        <router-outlet></router-outlet>
+      </app-main-view>
     </div>
   </div>
 </div>
