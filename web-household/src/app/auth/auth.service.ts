@@ -1,27 +1,34 @@
 import { User } from './user.model';
+import { ROLES, STATUS } from './user.enum';
 
 export class AuthService {
   private user: User[] = [
     new User(
       'Jean',
       'Dupont',
-      'jd.montreal124@outlook.fr',
-      'bizar15248963ko',
-      'TENANT'
+      'test@outlook.fr',
+      'testtest',
+      ROLES.TENANT,
+      STATUS.INACTIVE,
+      ''
     ),
     new User(
       'Arnaud',
       'bern',
-      'jd.bernArndhuh@gmail.com',
-      'bizar1sds4d7sdko',
-      'OWNER'
+      'test2@outlook.fr',
+      'testtest2',
+      ROLES.TENANT,
+      STATUS.INACTIVE,
+      ''
     ),
     new User(
       'Marc',
       'Twain',
       'marky.twainy@gmail.com',
       'bizar1sds4d7sdko',
-      'OWNER'
+      ROLES.OWNER,
+      STATUS.ACTIVE,
+      ''
     ),
   ];
 

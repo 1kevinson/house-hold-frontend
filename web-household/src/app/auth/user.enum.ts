@@ -1,0 +1,12 @@
+export enum STATUS {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  DEACTIVATED = 'DEACTIVATED',
+  UP_TO_DATE = 'UP TO DATE',
+  LATE = 'LATE',
+}
+
+export enum ROLES {
+  TENANT = 'TENANT',
+  OWNER = 'OWNER',
+}
