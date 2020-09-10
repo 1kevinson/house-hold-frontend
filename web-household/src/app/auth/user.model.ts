@@ -14,7 +14,6 @@ export class User {
     lastName: string,
     email: string,
     password: string,
-    status: any,
     role: string
   ) {
     this.firstName = firstName;
@@ -22,7 +21,6 @@ export class User {
     this.email = email;
     this.password = password;
     this.fullname = this.firstName + ' ' + this.lastName;
-    this.status = this.role === 'OWNER' ? '' : status;
     this.role = role;
   }
 }

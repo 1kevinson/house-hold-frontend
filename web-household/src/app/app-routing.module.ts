@@ -9,8 +9,8 @@ import { MainComponent } from './main/main.component';
  */
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/connexion', pathMatch: 'full' },
-  { path: 'connexion', component: AuthComponent },
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({
