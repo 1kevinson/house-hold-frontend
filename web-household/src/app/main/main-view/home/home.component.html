@@ -4,7 +4,7 @@
     style="width: 18rem;"
     *ngFor="let link of arrayOfLinksNumbers"
   >
-    <a routerLink="/{{ link[0] | lowercase }}">
+    <a routerLink="/app/{{ link[2] | lowercase }}">
       <div class="card-body text-dark">
         <h5 class="card-title">{{ link[0] | titlecase }}</h5>
         <p
@@ -15,7 +15,7 @@
         </p>
         <ng-template #elseBlock>
           <p class="card-text text-right">
-            Nombre de locataire : {{ link[1] }}
+            Nombre de locataires : {{ link[1] }}
           </p></ng-template
         >
       </div></a
