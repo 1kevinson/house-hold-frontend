@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 import { HouseIdentifierComponent } from './auth/house-identifier/house-identifier.component';
 import { HouseAdderComponent } from './auth/house-adder/house-adder.component';
 import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 /**
  * @Routes
