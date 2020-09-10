@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
-import { MainComponent } from './main/main.component';
+import { HouseIdentifierComponent } from './auth/house-identifier/house-identifier.component';
+import { HouseAdderComponent } from './auth/house-adder/house-adder.component';
+import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
 
 /**
  * @Routes
@@ -10,7 +12,15 @@ import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
-  { path: 'auth', component: AuthComponent },
+  {
+    path: 'auth',
+    component: AuthComponent,
+    children: [
+      { path: 'home', component: AuthHomeComponent },
+      { path: 'house-identifier', component: HouseIdentifierComponent },
+      { path: 'house-adder', component: HouseAdderComponent },
+    ],
+  },
 ];
 
 @NgModule({

@@ -21,6 +21,9 @@ import { BillService } from './main/main-view/bills/bill.service';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth/auth-guard.service';
 import { MainRoutingModule } from './main/main-routing.module';
+import { HouseAdderComponent } from './auth/house-adder/house-adder.component';
+import { HouseIdentifierComponent } from './auth/house-identifier/house-identifier.component';
+import { AuthHomeComponent } from './auth/auth-home/auth-home.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { MainRoutingModule } from './main/main-routing.module';
     HouseComponent,
     DocumentsComponent,
     AuthComponent,
+    HouseAdderComponent,
+    HouseIdentifierComponent,
+    AuthHomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MainRoutingModule, FormsModule],
   providers: [AuthService, NavService, BillService, AuthGuard],
