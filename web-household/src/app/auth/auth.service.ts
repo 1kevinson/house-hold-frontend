@@ -28,6 +28,25 @@ export class AuthService {
     ),
   ];
 
+  loggedIn = false;
+
+  login() {
+    this.loggedIn = true;
+  }
+
+  logout() {
+    this.loggedIn = false;
+  }
+
+  // Check if the user is Authenticated on server
+  isAuthenticated() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.login());
+      }, 1000);
+    });
+  }
+
   getUser(index: number) {
     return index <= this.user.length - 1 ? this.user[index] : undefined;
   }

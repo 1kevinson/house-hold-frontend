@@ -18,7 +18,8 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { NavService } from './main/nav-links/nav.service';
 import { BillService } from './main/main-view/bills/bill.service';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {FormsModule} from "@angular/forms";
     AuthComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [AuthService, NavService, BillService],
+  providers: [AuthService, NavService, BillService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
