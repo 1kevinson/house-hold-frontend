@@ -5,6 +5,7 @@ export class User {
   public status: string;
   public email: string;
   public password: string;
+  public role: string;
   public _token: string;
   public _token_expirationDate: Date;
 
@@ -13,13 +14,15 @@ export class User {
     lastName: string,
     email: string,
     password: string,
-    status: any
+    status: any,
+    role: string
   ) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.fullname = this.firstName + ' ' + this.lastName;
-    this.status = status;
+    this.status = this.role === 'OWNER' ? '' : status;
+    this.role = role;
   }
 }

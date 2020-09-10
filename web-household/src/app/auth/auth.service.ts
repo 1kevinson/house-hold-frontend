@@ -7,14 +7,24 @@ export class AuthService {
       'Dupont',
       'jd.montreal124@outlook.fr',
       'bizar15248963ko',
-      'En règle dans les paiements'
+      'En règle dans les paiements',
+      'TENANT'
     ),
     new User(
       'Arnaud',
       'bern',
       'jd.bernArndhuh@gmail.com',
       'bizar1sds4d7sdko',
-      'En retard dans les paiements'
+      'En retard dans les paiements',
+      'OWNER'
+    ),
+    new User(
+      'Marc',
+      'Twain',
+      'marky.twainy@gmail.com',
+      'bizar1sds4d7sdko',
+      'En retard dans les paiements',
+      'OWNER'
     ),
   ];
 
