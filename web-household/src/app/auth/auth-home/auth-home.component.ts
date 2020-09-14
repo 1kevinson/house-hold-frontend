@@ -19,6 +19,7 @@ export class AuthHomeComponent implements OnInit {
   userTypeProperty: string;
   userPasswordProperty: string;
   userPasswordConfirmProperty: string;
+  userEmailProperty: string;
 
   constructor() {}
 

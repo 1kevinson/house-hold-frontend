@@ -130,6 +130,7 @@
               name="userType"
               [ngModel]="userTypeProperty"
               #userType="ngModel"
+              pattern="^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w{1,3})$"
               required
             >
               <option selected>---</option>
@@ -145,6 +146,9 @@
               id="signUpEmail"
               placeholder="johnDoe125@outlook.fr"
               name="userEmail"
+              [ngModel]="userEmailProperty"
+              #userEmail="ngModel"
+              required
             />
           </div>
           <div class="form-group">
@@ -174,7 +178,11 @@
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="signupForm.valid"
+          >
             Inscription
           </button>
           &nbsp;
