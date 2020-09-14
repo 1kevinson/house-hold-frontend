@@ -9,10 +9,16 @@ import { NgForm } from '@angular/forms';
 export class AuthHomeComponent implements OnInit {
   // Accesing the form datas with view Child
   @ViewChild('loginForm') loginForm: NgForm;
+  @ViewChild('signupForm') signupForm: NgForm;
 
   //Property binding
   emailLoginProperty: string;
   passwordLoginProperty: string;
+  userFnProperty: string;
+  userLnProperty: string;
+  userTypeProperty: string;
+  userPasswordProperty: string;
+  userPasswordConfirmProperty: string;
 
   constructor() {}
 
@@ -22,8 +28,9 @@ export class AuthHomeComponent implements OnInit {
     console.log(this.loginForm);
   }
 
-  onCancelLogin() {
-    this.emailLoginProperty = '';
-    this.passwordLoginProperty = '';
+  onCancelLogin() {}
+
+  onSubmitSignup() {
+    console.log(this.signupForm);
   }
 }

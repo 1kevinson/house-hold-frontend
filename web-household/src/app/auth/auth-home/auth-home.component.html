@@ -93,7 +93,7 @@
 
       <!-- SignUp Form -->
       <div class="tab-pane fade" id="inscription">
-        <form>
+        <form (ngSubmit)="onSubmitSignup()" #signupForm="ngForm">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="signUpName">Nom</label>
@@ -102,6 +102,10 @@
                 class="form-control"
                 id="signUpName"
                 placeholder="Doe"
+                name="userFirstname"
+                [ngModel]="userFnProperty"
+                #userFirstname="ngModel"
+                required
               />
             </div>
             <div class="form-group col-md-6">
@@ -111,12 +115,23 @@
                 class="form-control"
                 id="signUpLastname"
                 placeholder="John"
+                name="userLastname"
+                [ngModel]="userLnProperty"
+                #userLastname="ngModel"
+                required
               />
             </div>
           </div>
           <div class="form-group">
             <label for="type">Proprietaire ou Locataire ?</label>
-            <select class="form-control form-control-sm" id="type">
+            <select
+              class="form-control form-control-sm"
+              id="type"
+              name="userType"
+              [ngModel]="userTypeProperty"
+              #userType="ngModel"
+              required
+            >
               <option selected>---</option>
               <option value="tenant">Locataire</option>
               <option value="owner">Propriétaire</option>
@@ -129,11 +144,20 @@
               class="form-control"
               id="signUpEmail"
               placeholder="johnDoe125@outlook.fr"
+              name="userEmail"
             />
           </div>
           <div class="form-group">
             <label for="signUpPassword">Mot de passe</label>
-            <input type="password" class="form-control" id="signUpPassword" />
+            <input
+              type="password"
+              class="form-control"
+              id="signUpPassword"
+              name="userPassword"
+              [ngModel]="userPasswordProperty"
+              #userPassword="ngModel"
+              required
+            />
             <small class="form-text text-muted"
               >Le mot de passe doit contenir au moins 6 caractères</small
             >
@@ -144,6 +168,10 @@
               type="password"
               class="form-control"
               id="signUpConfirmPassword"
+              name="userPasswordConfirm"
+              [ngModel]="userPasswordConfirmProperty"
+              #userPasswordConfirm="ngModel"
+              required
             />
           </div>
           <button type="submit" class="btn btn-primary">
