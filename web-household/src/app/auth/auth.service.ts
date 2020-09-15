@@ -7,7 +7,7 @@ export class AuthService {
       'Jean',
       'Dupont',
       'test@outlook.fr',
-      'testtest',
+      '1234',
       ROLES.TENANT,
       STATUS.INACTIVE,
       ''
@@ -33,6 +33,7 @@ export class AuthService {
   ];
 
   loggedIn: boolean = false;
+  userLoggedData: any;
 
   login() {
     this.loggedIn = true;
@@ -41,8 +42,6 @@ export class AuthService {
   logout() {
     this.loggedIn = false;
   }
-
-  onLoginUser() {}
 
   onSignupUser(user: any) {
     const newUser = new User(
@@ -61,11 +60,26 @@ export class AuthService {
     });
   }
 
+  onLoginUser(user: any) {
+    const foundedUser = this.users.filter((userEl) => {
+      return userEl.email === user.email && userEl.password === user.password;
+    });
+
+    return new Promise((resolve) => {
+      resolve({
+        data:
+          foundedUser.length == 1
+            ? foundedUser
+            : 'Vos identifiants ne sont pas corrects',
+      });
+    });
+  }
+
   // Check if the user is Authenticated on server
   isAuthenticated() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.login());
+        resolve(this.loggedIn);
       }, 1000);
     });
   }

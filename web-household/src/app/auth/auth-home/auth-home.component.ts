@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { isArray, log } from 'util';
 
 @Component({
   selector: 'app-auth-home',
@@ -14,6 +15,8 @@ export class AuthHomeComponent implements OnInit {
   @ViewChild('signupForm') signupForm: NgForm;
 
   errorPassword: boolean;
+  loginOk: boolean;
+  loginErrorMessage: string;
   signupOK: boolean;
 
   userLogin = {
@@ -35,7 +38,16 @@ export class AuthHomeComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmitLogin() {
-    console.log(this.loginForm);
+    this.userLogin.email = this.loginForm.value.loginEmail;
+    this.userLogin.password = this.loginForm.value.loginPassword;
+    this.authService.onLoginUser(this.userLogin).then((resp: any) => {
+      if (isArray(resp.data)) {
+        this.loginOk = true;
+        console.log(resp.data);
+      }else {
+        this.loginOk = false;
+      }
+    });
   }
 
   onCancelLogin() {}
