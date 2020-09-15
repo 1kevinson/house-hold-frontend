@@ -2,7 +2,7 @@ import { User } from './user.model';
 import { ROLES, STATUS } from './user.enum';
 
 export class AuthService {
-  private user: User[] = [
+  private users: User[] = [
     new User(
       'Jean',
       'Dupont',
@@ -32,7 +32,7 @@ export class AuthService {
     ),
   ];
 
-  loggedIn = false;
+  loggedIn: boolean = false;
 
   login() {
     this.loggedIn = true;
@@ -40,6 +40,21 @@ export class AuthService {
 
   logout() {
     this.loggedIn = false;
+  }
+
+  onLoginUser() {}
+
+  onSignupUser(user: any) {
+    const newUser = new User(
+      user.firstname,
+      user.lastname,
+      user.email,
+      user.password,
+      user.role,
+      STATUS.INACTIVE,
+      ''
+    );
+    this.users.push(newUser);
   }
 
   // Check if the user is Authenticated on server
@@ -52,6 +67,6 @@ export class AuthService {
   }
 
   getUser(index: number) {
-    return index <= this.user.length - 1 ? this.user[index] : undefined;
+    return index <= this.users.length - 1 ? this.users[index] : undefined;
   }
 }

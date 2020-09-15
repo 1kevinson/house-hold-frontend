@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-auth-home',
@@ -11,17 +13,23 @@ export class AuthHomeComponent implements OnInit {
   @ViewChild('loginForm') loginForm: NgForm;
   @ViewChild('signupForm') signupForm: NgForm;
 
-  //Property binding
-  emailLoginProperty: string;
-  passwordLoginProperty: string;
-  userFnProperty: string;
-  userLnProperty: string;
-  userTypeProperty: string;
-  userPasswordProperty: string;
-  userPasswordConfirmProperty: string;
-  userEmailProperty: string;
+  errorPassword: boolean;
 
-  constructor() {}
+  userLogin = {
+    email: '',
+    password: '',
+  };
+
+  userSignup = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    role: '',
+    password: '',
+    passwordConfirm: '',
+  };
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -32,6 +40,21 @@ export class AuthHomeComponent implements OnInit {
   onCancelLogin() {}
 
   onSubmitSignup() {
-    console.log(this.signupForm);
+    this.userSignup.firstname = this.signupForm.value.userFirstname;
+    this.userSignup.lastname = this.signupForm.value.userLastname;
+    this.userSignup.email = this.signupForm.value.userEmail;
+    this.userSignup.role = this.signupForm.value.userRole;
+    this.userSignup.password = this.signupForm.value.userPassword;
+    this.userSignup.passwordConfirm = this.signupForm.value.userPasswordConfirm;
+
+    this.errorPassword =
+      this.userSignup.password !== this.userSignup.passwordConfirm;
+
+    if (this.errorPassword) {
+      return;
+    }
+
+    this.authService.onSignupUser(this.userSignup);
+    this.router.navigate(['/auth/home'])
   }
 }
