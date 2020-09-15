@@ -54,7 +54,11 @@ export class AuthService {
       STATUS.INACTIVE,
       ''
     );
-    this.users.push(newUser);
+    return new Promise((resolve, reject) => {
+      this.users.push(newUser);
+      resolve('Saved');
+      reject(new Error('Unable to save user'));
+    });
   }
 
   // Check if the user is Authenticated on server

@@ -207,7 +207,22 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <button type="submit" class="btn btn-primary">
+
+          <!-- Alert succes signup-->
+          <div class="alert alert-success" role="alert" *ngIf="signupOK">
+            <h4 class="alert-heading">Felicitations!</h4>
+            <p>Vous êtes inscrit sur la plateforme ! 🎉</p>
+            <hr />
+            <small class="mb-0">
+              Veuillez consulter votre boite mail pour vérifier votre compte
+            </small>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!signupForm.valid"
+          >
             Inscription
           </button>
           &nbsp;

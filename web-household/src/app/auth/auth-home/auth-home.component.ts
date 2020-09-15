@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-home',
@@ -14,6 +14,7 @@ export class AuthHomeComponent implements OnInit {
   @ViewChild('signupForm') signupForm: NgForm;
 
   errorPassword: boolean;
+  signupOK: boolean;
 
   userLogin = {
     email: '',
@@ -54,7 +55,8 @@ export class AuthHomeComponent implements OnInit {
       return;
     }
 
-    this.authService.onSignupUser(this.userSignup);
-    this.router.navigate(['/auth/home'])
+    this.authService.onSignupUser(this.userSignup).then((res) => {
+      this.signupOK = res === 'Saved';
+    });
   }
 }
