@@ -5,3 +5,11 @@ input.ng-invalid.ng-touched {
 input.ng-valid {
   border-bottom: 2px solid #71e781;
 }
+
+select.ng-invalid {
+  border-color: #ceb46d;
+}
+
+select.ng-valid {
+  border-color: #71e781;
+}

@@ -28,6 +28,7 @@
     <div class="tab-content pt-4" id="myTabContent">
       <!-- Login Form -->
       <div class="tab-pane fade show active" id="connexion">
+        <!-- name="" is use for controls -->
         <!-- Use ngForm to return a javascript object for working with datas -->
         <!-- Use #emailLogin="ngModel" for each input validation -->
         <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
@@ -130,10 +131,9 @@
               name="userType"
               [ngModel]="userTypeProperty"
               #userType="ngModel"
-              pattern="^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w{1,3})$"
               required
             >
-              <option selected>---</option>
+              <option value="" disabled selected>Select your option</option>
               <option value="tenant">Locataire</option>
               <option value="owner">Propriétaire</option>
             </select>
@@ -146,10 +146,16 @@
               id="signUpEmail"
               placeholder="johnDoe125@outlook.fr"
               name="userEmail"
+              pattern="^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w{1,3})$"
               [ngModel]="userEmailProperty"
               #userEmail="ngModel"
               required
             />
+            <small
+              class="form-text text-muted"
+              *ngIf="userEmail.invalid && userEmail.dirty"
+              >Entrez une adresse email valide</small
+            >
           </div>
           <div class="form-group">
             <label for="signUpPassword">Mot de passe</label>
@@ -160,9 +166,12 @@
               name="userPassword"
               [ngModel]="userPasswordProperty"
               #userPassword="ngModel"
+              minlength="6"
               required
             />
-            <small class="form-text text-muted"
+            <small
+              class="form-text text-muted"
+              *ngIf="userPassword.invalid && userPassword.dirty"
               >Le mot de passe doit contenir au moins 6 caractères</small
             >
           </div>
@@ -175,13 +184,19 @@
               name="userPasswordConfirm"
               [ngModel]="userPasswordConfirmProperty"
               #userPasswordConfirm="ngModel"
+              minlength="6"
               required
             />
+            <small
+              class="form-text text-muted"
+              *ngIf="userPasswordConfirm.invalid && userPasswordConfirm.dirty"
+              >Le mot de passe doit contenir au moins 6 caractères</small
+            >
           </div>
           <button
             type="submit"
             class="btn btn-primary"
-            [disabled]="signupForm.valid"
+            [disabled]="!signupForm.valid"
           >
             Inscription
           </button>
