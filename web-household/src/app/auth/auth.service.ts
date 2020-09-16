@@ -6,7 +6,7 @@ export class AuthService {
     new User(
       'Jean',
       'Dupont',
-      'test@outlook.fr',
+      'test@me.fr',
       '1234',
       ROLES.TENANT,
       STATUS.INACTIVE,
@@ -33,7 +33,6 @@ export class AuthService {
   ];
 
   loggedIn: boolean = false;
-  userLoggedData: any;
 
   login() {
     this.loggedIn = true;
@@ -53,10 +52,10 @@ export class AuthService {
       STATUS.INACTIVE,
       ''
     );
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.users.push(newUser);
+      console.log(this.users);
       resolve('Saved');
-      reject(new Error('Unable to save user'));
     });
   }
 

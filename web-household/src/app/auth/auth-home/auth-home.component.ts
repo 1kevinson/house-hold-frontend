@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { isArray } from 'util';
 
 @Component({
   selector: 'app-auth-home',
@@ -75,6 +74,7 @@ export class AuthHomeComponent implements OnInit {
 
     this.authService.onSignupUser(this.userSignup).then((res) => {
       this.signupOK = res === 'Saved';
+      this.onCancelSignup();
     });
   }
 
