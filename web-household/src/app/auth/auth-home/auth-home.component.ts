@@ -15,7 +15,7 @@ export class AuthHomeComponent implements OnInit {
   @ViewChild('signupForm') signupForm: NgForm;
 
   errorPassword: boolean;
-  loginOk: boolean;
+  loginOk: boolean = true;
   loginErrorMessage: string;
   signupOK: boolean;
 
@@ -54,7 +54,9 @@ export class AuthHomeComponent implements OnInit {
     });
   }
 
-  onCancelLogin() {}
+  onCancelLogin() {
+    this.loginForm.reset();
+  }
 
   onSubmitSignup() {
     this.userSignup.firstname = this.signupForm.value.userFirstname;
@@ -74,5 +76,9 @@ export class AuthHomeComponent implements OnInit {
     this.authService.onSignupUser(this.userSignup).then((res) => {
       this.signupOK = res === 'Saved';
     });
+  }
+
+  onCancelSignup() {
+    this.signupForm.reset();
   }
 }

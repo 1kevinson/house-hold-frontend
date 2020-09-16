@@ -11,6 +11,7 @@
           href="#connexion"
           aria-controls="connexion"
           aria-selected="true"
+          (click)="onCancelSignup()"
           >Connexion</a
         >
       </li>
@@ -21,6 +22,7 @@
           href="#inscription"
           aria-controls="inscription"
           aria-selected="false"
+          (click)="onCancelLogin()"
           >Inscription</a
         >
       </li>
@@ -77,6 +79,9 @@
               *ngIf="!passwordLogin.untouched && passwordLogin.invalid"
               >Veuillez entrer votre mot de passe</small
             >
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="!loginOk">
+            <small>{{ loginErrorMessage }}</small>
           </div>
           <button
             type="submit"
@@ -226,7 +231,13 @@
             Inscription
           </button>
           &nbsp;
-          <button type="button" class="btn btn-light">Annuler</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="onCancelSignup()"
+          >
+            Annuler
+          </button>
         </form>
       </div>
     </div>
