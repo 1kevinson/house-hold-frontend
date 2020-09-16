@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { isArray, log } from 'util';
+import { isArray } from 'util';
 
 @Component({
   selector: 'app-auth-home',
@@ -41,11 +41,15 @@ export class AuthHomeComponent implements OnInit {
     this.userLogin.email = this.loginForm.value.loginEmail;
     this.userLogin.password = this.loginForm.value.loginPassword;
     this.authService.onLoginUser(this.userLogin).then((resp: any) => {
-      if (isArray(resp.data)) {
+      if (resp.data.length === 1) {
         this.loginOk = true;
-        console.log(resp.data);
-      }else {
+        this.authService.login();
+        this.router
+          .navigate(['/app/home'])
+          .then(() => console.log('logged In !'));
+      } else {
         this.loginOk = false;
+        this.loginErrorMessage = 'Identifiants incorrects';
       }
     });
   }

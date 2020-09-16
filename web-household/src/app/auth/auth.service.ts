@@ -67,10 +67,7 @@ export class AuthService {
 
     return new Promise((resolve) => {
       resolve({
-        data:
-          foundedUser.length == 1
-            ? foundedUser
-            : 'Vos identifiants ne sont pas corrects',
+        data: foundedUser,
       });
     });
   }
@@ -78,9 +75,7 @@ export class AuthService {
   // Check if the user is Authenticated on server
   isAuthenticated() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(this.loggedIn);
-      }, 1000);
+      resolve(this.loggedIn);
     });
   }
 
