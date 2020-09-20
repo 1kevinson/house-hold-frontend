@@ -3,11 +3,15 @@
   <div class="col-12">
     <div class="row">
       <div class="col-6">
-        <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmit()" #s="ngForm">
+        <form
+          class="form-inline my-2 my-lg-0"
+          (ngSubmit)="onSubmit()"
+          #s="ngForm"
+        >
           <label>
             <input
               class="form-control mr-sm-2"
-              type="search"
+              type="number"
               placeholder="année de facturation"
               ngModel
               name="search"
@@ -19,7 +23,9 @@
         </form>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        Total de factures : &nbsp;<span><kbd> {{ billsCount }}</kbd></span>
+        Total de factures : &nbsp;<span
+          ><kbd> {{ billsCount }}</kbd></span
+        >
       </div>
     </div>
   </div>
